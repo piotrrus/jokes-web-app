@@ -1,0 +1,43 @@
+<ng-container *ngIf="favouriteJokes.length > 0">
+  <div fxLayout="row">
+    <div fxFlex="90%">
+      <p>List of favourite jokes:</p>
+    </div>
+    <div fxFlex="10%">
+      <button mat-raised-button color="primary" (click)="clearAll()">
+        Clear all
+      </button>
+    </div>
+  </div>
+
+  <div
+    class="example-container mat-elevation-z2"
+    *ngFor="let jokes of favouriteJokes">
+    <div class="example-header">
+      <div fxLayout="row">
+        <div fxFlex="70%">
+          {{ jokes.joke }}
+          <p class="small">{{ jokes.url }}</p>
+        </div>
+        <div fxFlex="15%">
+          {{ jokes.date }}
+        </div>
+
+        <div fxFlex="15%">
+          <star-rating
+            value="{{ jokes.rating }}"
+            checkedcolor="green"
+            uncheckedcolor="grey"
+            size="24px"
+            readonly="true">
+          </star-rating>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf="favouriteJokes.length < 1">
+  <p>There's no favourite jokes.</p>
+  <p>You need to<a mat-button [routerLink]="'/jokes'">add one.</a></p>
+</ng-container>
