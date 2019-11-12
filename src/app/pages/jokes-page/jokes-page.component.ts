@@ -7,8 +7,7 @@ import { Joke } from '../../models/Joke.model';
 
 @Component({
   selector: 'app-jokes-page',
-  templateUrl: './jokes-page.component.html',
-  styleUrls: ['./jokes-page.component.css']
+  templateUrl: './jokes-page.component.html'
 })
 export class JokesPageComponent implements OnInit {
   jokeData: any = [];
