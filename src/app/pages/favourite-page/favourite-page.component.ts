@@ -15,7 +15,6 @@ export class FavouritePageComponent implements OnInit {
 
   ngOnInit() {
     this.favouriteJokes = this.favouriteService.favouriteJokes;
-    console.log(this.favouriteService.favouriteJokes);
   }
 
   clearAll() {
